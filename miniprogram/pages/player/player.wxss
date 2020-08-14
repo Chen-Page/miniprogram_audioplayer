@@ -1,0 +1,132 @@
+/* miniprogram/pages/player/player.wxss */
+/* 播放器样式开始 */
+
+.player{
+  background: #333;
+  margin: 10rpx auto;
+  width: 720rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 15rpx 0;
+  box-shadow: 0 0 8rpx 5rpx rgba(0, 0, 0, .4);
+}
+
+.player .time{
+  font-size: 9pt;
+  color: #fff;
+  width: 100rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.player-slider{
+  margin: 20rpx 10rpx;
+}
+
+.player .button{
+  font-size: 18pt!important;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 8rpx 0;
+}
+.player .button.main{
+  font-size: 24pt!important;
+}
+
+/* 播放器样式结束 */
+
+/* 其他样式开始 */
+
+.nextPlayButton{
+  margin: 0 auto;
+  width: 300rpx;
+  height: 80rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 11pt;
+  background: #00e600;
+}
+
+/* 其他样式结束 */
+
+/* 列表样式开始 */
+
+.list-modal{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, .4);
+}
+
+.list-content{
+  position: absolute;
+  bottom: 30rpx;
+  height: 750rpx;
+  width: 660rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30rpx 0 20rpx;
+}
+.list-title .title{
+  font-size: 13pt;
+  font-weight: bold;
+  margin-right: 5rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.list-title .number{
+  font-size: 11pt;
+  color: #666;
+}
+
+.list-modal .top-button-group {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.list-modal .top-button,.list-modal .top-button.button{
+  font-size: 9pt!important;
+  color: #666;
+  margin-top: 5rpx;
+  margin-bottom: 20rpx;
+}
+
+.list-modal .audio-list{
+  height: 600rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.list-modal .audio-item{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.list-modal .audio-name{
+  font-size: 10pt;
+  margin: 12rpx 0;
+  max-width: 360rpx;
+  font-weight: 600;
+}
+
+.list-modal .audio-name.active{
+  color: red;
+}
+
+.list-modal .audio-remove{
+  font-size: 13pt;
+  color: #666;
+}
+
+/* 列表样式结束 */

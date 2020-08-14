@@ -1,0 +1,36 @@
+.flex{
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-col-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-shrink-1{
+  flex-shrink: 1;
+}
+
+/* 单行文本显示 */
+.onelineText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 两行文本 */
+.twolineText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

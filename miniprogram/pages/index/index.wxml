@@ -1,0 +1,2 @@
+<button catchtap='login' type='primary'>获取openid</button>
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary">获取用户头像昵称</button>

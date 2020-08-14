@@ -1,0 +1,82 @@
+
+<!-- 播放器 -->
+<view class="player">
+  <view>
+    <view class="flex-between">
+      <view class="flex-col-center time">
+        {{progress.currentTimeContent.min || '00'}}:{{progress.currentTimeContent.sec || '00'}}
+      </view>
+      <view class="flex-col-center flex-1">
+        <slider block-size="12" activeColor='red' value='{{progress.percent}}' bindchange='dragAudioSlider' class="player-slider"></slider>
+      </view>
+      <view class="flex-col-center time">
+        {{progress.durationContent.min || '00'}}:{{progress.durationContent.sec || '00'}}
+      </view>
+    </view>
+  </view>
+  <view class="flex-around">
+    <view class="flex-col-center" catchtap='changePlaySequence'>
+      <label class="iconfont icon-random button" wx:if="{{progress.playSequence == 'random'}}"></label>
+      <label class="iconfont icon-single-loop button" wx:elif="{{progress.playSequence == 'single'}}"></label>
+      <label class="iconfont icon-list-loop button" wx:else></label>
+    </view>
+    <view class="flex-col-center" catchtap='prevAudio'>
+      <label class="iconfont icon-prev button"></label>
+    </view>
+    <view class="flex-col-center" catchtap='{{progress.paused ? "playAudio" : "pauseAudio"}}'>
+      <label class="iconfont icon-pause button main" wx:if='{{!progress.paused}}'></label>
+      <label class="iconfont icon-play button main" wx:else></label>
+    </view>
+    <view class="flex-col-center" catchtap='nextAudio'>
+      <label class="iconfont icon-next button"></label>
+    </view>
+    <view class="flex-col-center" catchtap='toggleListModal'>
+      <label class="iconfont icon-menu button"></label>
+    </view>
+  </view>
+</view>
+
+<view>
+  <view catchtap='pushNextPlayAudio' class="nextPlayButton flex-col-center">
+    <view>添加至下一首播放</view>
+  </view>
+</view>
+
+<!-- 列表 -->
+<view class="list-modal" wx:if="{{showListModal}}" catchtap='toggleListModal'>
+  <view class="list-content">
+    <view>
+      <view class="list-title">
+        <label class="title">当前播放</label>
+        <label class="number">(12)</label>
+      </view>
+      <view class="flex-between top-button-group">
+        <view class="top-button" catchtap='changePlaySequence'>
+          <label class="iconfont icon-random button" wx:if="{{progress.playSequence == 'random'}}"></label>
+          <label class="iconfont icon-single-loop button" wx:elif="{{progress.playSequence == 'single'}}"></label>
+          <label class="iconfont icon-list-loop button" wx:else></label>
+          <label wx:if="{{progress.playSequence == 'random'}}">随机播放</label>
+          <label wx:elif="{{progress.playSequence == 'single'}}">单曲循环</label>
+          <label wx:else>列表循环</label>
+        </view>
+        <view class="top-button">
+          <label>删除</label>
+        </view>
+      </view>
+    </view>
+    <view>
+      <scroll-view scroll-y='{{true}}' class="audio-list">
+        <block wx:for='{{audioList}}' wx:key='audioList'>
+          <view class="flex-between audio-item">
+            <view class="onelineText audio-name {{activeIndex == index ? 'active' : ''}}" catchtap='changeAudio' data-index='{{index}}'>
+              {{item.title}}
+            </view>
+            <view class="audio-remove" catchtap='removeAudio' data-index='{{index}}'>
+              x
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
