@@ -145,11 +145,7 @@ manager.playAudio = () => {
       manager._playingAudioIndex_ = index
     }
     if (!isNull(audio.src)) {
-      let keys = Object.keys(audio)
-      for (let i in keys) {
-        const name = keys[i]
-        manager[name] = audio[name]
-      }
+      setManager(audio)
       pushHistoryList(audio)
       manager.play()
     }
@@ -214,11 +210,7 @@ manager.changeAudio = (e) => {
     manager.stopAudio()
     manager._playingAudioIndex_ = index
     let audio = audioList[manager._playingAudioIndex_]
-    let keys = Object.keys(audio)
-    for (let i in keys) {
-      const name = keys[i]
-      manager[name] = audio[name]
-    }
+    setManager(audio)
     manager.playAudio()
   }
 }
@@ -232,11 +224,7 @@ manager.prevAudio = () => {
     manager._historyList_.shift()
     audio = manager._historyList_[0]
     let index = getIndexById(audio.id)
-    let keys = Object.keys(audio)
-    for (let i in keys) {
-      const name = keys[i]
-      manager[name] = audio[name]
-    }
+    setManager(audio)
     manager._playingAudioIndex_ = index
     manager.playAudio()
   } else {
@@ -251,11 +239,7 @@ manager.prevAudio = () => {
     }
     manager._playingAudioIndex_ = index
     let audio = manager._audioList_[manager._playingAudioIndex_]
-    let keys = Object.keys(audio)
-    for (let i in keys) {
-      const name = keys[i]
-      manager[name] = audio[name]
-    }
+    setManager(audio)
     manager.playAudio()
   }
 }
@@ -268,11 +252,7 @@ manager.nextAudio = () => {
   })
   manager._playingAudioIndex_ = index
   let audio = manager._audioList_[manager._playingAudioIndex_]
-  let keys = Object.keys(audio)
-  for (let i in keys) {
-    const name = keys[i]
-    manager[name] = audio[name]
-  }
+  setManager(audio)
   manager.playAudio()
 }
 
@@ -290,11 +270,7 @@ manager.resetAudio = () => {
   // 重置当前播放内容
   manager.stopAudio()
   let audio = new BackgroundAudio()
-  let keys = Object.keys(audio)
-  for (let i in keys) {
-    const name = keys[i]
-    manager[name] = audio[name]
-  }
+  setManager(audio)
 }
 
 manager.getAudioList = () => {
@@ -367,11 +343,7 @@ manager.onEnded(() => {
   })
   manager._playingAudioIndex_ = index
   let audio = manager._audioList_[manager._playingAudioIndex_]
-  let keys = Object.keys(audio)
-  for (let i in keys) {
-    const name = keys[i]
-    manager[name] = audio[name]
-  }
+  setManager(audio)
   manager.playAudio()
 })
 
@@ -464,6 +436,14 @@ let getIndexById = (id) => {
     }
   }
   return index
+}
+
+let setManager = (audio) => { // 设置manager
+  let keys = Object.keys(audio)
+  for (let i in keys) {
+    const name = keys[i]
+    manager[name] = audio[name]
+  }
 }
 
 module.exports = manager

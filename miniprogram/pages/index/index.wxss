@@ -151,3 +151,8 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+
+.img{
+  width: 100rpx;
+  height: 100rpx;
+}

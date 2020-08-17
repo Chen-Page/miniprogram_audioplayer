@@ -21,7 +21,7 @@ let type = (o) => {
 })
 
 let isNull = (obj) => {
-  // 判断是否为空对象，长度为0的数组，空字符串，是否为undefined、null，NaN的数字
+  // 判断是否为空对象，长度为0的数组，空字符串，是否为undefined、null，是否为NaN的数字
   if (obj === 'null' || obj === 'undefined') {
     return true
   } else if (type.isString(obj) || type.isArray(obj)) {

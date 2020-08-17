@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    imagePath: ''
   },
 
   /**
@@ -40,7 +40,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
   },
 
   /**
@@ -71,6 +70,24 @@ Page({
     })
   },
 
+  getFileStream () {
+    let t = this
+    const testSrc = 'http://music.163.com/song/media/outer/url?id=22814470.mp3'
+    wx.cloud.callFunction({
+      name: 'uploadFile',
+      data: {
+        url: testSrc,
+        type: 'upload',
+        filename: '花鸟风月.mp3'
+      },
+      success (res) {
+        console.log(res)
+      },
+      fail (err) {
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -22,8 +22,8 @@ Page({
   onLoad: function (options) {
     let t = this
     manager.pushAudioList(testData.audioList)
-    manager.playAudio()
-    manager.pauseAudio()
+    // manager.playAudio()
+    // manager.pauseAudio()
     manager.getPlayerStatus((res) => {
       t.setData({
         progress: res,
