@@ -1,8 +1,8 @@
 <button catchtap='login' type='primary'>获取openid</button>
 <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary">获取用户头像昵称</button>
-<button catchtap='getFileStream' type="default">获取文件流</button>
-
-<view>
-  {{imagePath || 'imagePath图片'}}
-  <image src="{{imagePath}}" mode="aspectFill" class="img"></image>
+<button type="warn" catchtap='changeAside'>打开侧边栏</button>
+<view class="modal-back" wx:if='{{aside}}' catchtap='changeAside'>
+  <view class="aside animated slideInLeft" catchtap='doNothing'>
+    <open-data type="userNickName"></open-data>
+  </view>
 </view>

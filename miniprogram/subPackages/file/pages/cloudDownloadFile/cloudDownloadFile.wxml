@@ -1,0 +1,49 @@
+<view class="upload-form">
+  <view class="input-textarea">
+    <textarea class="textarea" bindinput="input" data-name='src' placeholder="请输出链接（支持http、https、ftp）"></textarea>
+  </view>
+  <view class="input-group">
+    <view class="input-group-name">歌曲名(必填)</view>
+    <view class="input-group-input">
+      <input bindinput="input" data-name="title" class="input" placeholder="请输入歌曲的名字"></input>
+    </view>
+  </view>
+  <view class="input-group">
+    <view class="input-group-name">后缀名(必填)</view>
+    <view class="input-group-picker">
+      <picker mode="selector" range='{{audioType}}' value='{{selectedAudioIndex}}' bindchange='picker' data-name='selectedAudioIndex' class="picker">
+        {{selectedAudioIndex == -1? '未获取' : audioType[selectedAudioIndex]}}
+      </picker>
+    </view>
+  </view>
+  <view class="input-group">
+    <view class="input-group-name">歌手(选填)</view>
+    <view class="input-group-input">
+      <input bindinput="input" data-name="singer" class="input" placeholder="请输入歌手的名字"></input>
+    </view>
+  </view>
+  <view class="input-group">
+    <view class="input-group-name">专辑名(选填)</view>
+    <view class="input-group-input">
+      <input bindinput="input" data-name="epname" class="input" placeholder="请输入歌曲所在专辑的名字"></input>
+    </view>
+  </view>
+  <view class="input-group">
+    <view class="input-group-name">封面上传(选填)</view>
+    <view class="input-group-file">
+      <view wx:if="{{coverImgUrl}}">
+        <image class="img" src="{{coverImgUrl}}" mode="aspectFill"></image>
+      </view>
+      <view class="file" catchtap="choosePoster" wx:else></view>
+    </view>
+  </view>
+  <view class="input-group">
+    <view class="input-group-name">时长(选填)</view>
+    <view class="input-group-input">
+      <input bindinput="input" data-name="duration" class="input" placeholder="音乐时长，格式为（hh:mm:ss）"></input>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="flex-col-center submit-button" catchtap="checkData">云端下载</view>
+  </view>
+</view>

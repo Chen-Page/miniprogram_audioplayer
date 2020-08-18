@@ -114,11 +114,86 @@ let shuffle = (arr = []) => {
   return arr
 }
 
+let deepClone = (target) => {
+  // 深拷贝
+  let result
+  if (typeof target === 'object') {
+    if (Array.isArray(target)) {
+      for (let i in target) {
+        result.push(deepClone(target[i]))
+      }
+    } else if (target === null) {
+      result = null 
+    } else if (target.constructor === RegExp) {
+      result = target
+    } else {
+      result = {}
+      for (let i in target) {
+        result[i] = deepClone(target[i])
+      }
+    }
+  } else {
+    result = target
+  }
+  return result
+}
+
+let getExtension = (e = '') => {
+  if (!type.isString(e)) {
+    return ''
+  }
+  if (!e.includes('.')) {
+    return ''
+  }
+  let arr = e.split('.')
+  return arr[arr.length - 1]
+}
+
+let showModal = (e = {}) => {
+  // 自定义modal，暂时使用小程序原生modal
+  wx.showModal(e)
+}
+
+let hideModal = (e = {}) => {
+  // 隐藏自定义modal
+  wx.hideModal(e)
+}
+
+let showLoading = (e = {}) => {
+  // 自定义loading，暂时使用小程序原生loading
+  wx.showLoading(e)
+}
+
+let hideLoading = (e = {}) => {
+  // 隐藏自定义loading
+  wx.hideLoading(e)
+}
+
+let showToast = (e = {}) => {
+  // 自定义toast，暂时使用小程序原生toast
+  e.icon = 'none'
+  wx.showToast(e)
+}
+
+let hideToast = (e = {}) => {
+  // 隐藏自定义toast
+  wx.hideToast(e)
+}
+
+
 module.exports = {
   type,
   isNull,
   padStart,
   padEnd,
   randomNewNumber,
-  shuffle
+  shuffle,
+  deepClone,
+  getExtension,
+  showModal,
+  hideModal,
+  showLoading,
+  hideLoading,
+  showToast,
+  hideToast
 }

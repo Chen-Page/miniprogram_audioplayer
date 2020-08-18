@@ -1,0 +1,104 @@
+/* subPackages/file/pages/cloudDownloadFile/cloudDownloadFile.wxss */
+page{
+  background: #e2e2e2;
+}
+.upload-form{
+  padding-bottom: 240rpx;
+}
+.input-textarea{
+  width: 750rpx;
+  height: 600rpx;
+  box-sizing: border-box;
+  padding: 40rpx 15rpx;
+}
+.input-textarea .textarea{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #fff;
+}
+
+.input-group{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 8rpx 15rpx;
+  margin: 5rpx auto;
+}
+
+.input-group-name{
+  font-size: 9pt;
+  color: #666;
+  margin: 5rpx;
+}
+
+.input-group-input .input,.input-group-picker .picker{
+  background-color: #fff;
+  height: 60rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  font-size: 11pt;
+  color: #333;
+}
+
+.input-group-input .input{
+  width: 450rpx;
+}
+.input-group-picker .picker{
+  display: inline-block;
+  padding: 10rpx 40rpx;
+}
+
+.input-group-file .file,.input-group-file .img{
+  background: #fff;
+  width: 200rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding: 40rpx;
+  margin: 20rpx 0;
+  position: relative;
+}
+
+.input-group-file .file::before,.input-group-file .file::after{
+  content: '';
+  background: #999;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10rpx;
+}
+
+.input-group-file .file::before{
+  width: 160rpx;
+  height: 10rpx;
+}
+
+.input-group-file .file::after{
+  width: 10rpx;
+  height: 160rpx;
+}
+
+.upload-form .bottom{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: #e2e2e2;
+  padding: 20rpx 0;
+  z-index: 1;
+}
+.submit-button{
+  width: 600rpx;
+  height: 80rpx;
+  background: #09bb07;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  border-radius: 5rpx;
+  font-size: 11pt;
+}

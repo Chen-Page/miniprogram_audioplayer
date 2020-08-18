@@ -1,3 +1,5 @@
+// 如果需要默认获取时长duration，请在设置第一次设置完src后调用一次 playAudio()方法 和 puaseAudio() 方法
+
 const manager = wx.getBackgroundAudioManager()
 const util = require('./util')
 const { isNull } = require('./util')

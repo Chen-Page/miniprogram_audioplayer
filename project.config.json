@@ -62,15 +62,24 @@
       "current": 0,
       "list": [
         {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+          "id": 0,
+          "name": "云端下载",
+          "pathName": "subPackages/file/pages/cloudDownloadFile/cloudDownloadFile",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "播放器页面",
+          "pathName": "subPackages/player/pages/player/player",
+          "query": "",
+          "scene": null
         },
         {
           "id": -1,
-          "name": "播放器页面",
-          "pathName": "pages/player/player",
+          "name": "云端下载",
+          "pathName": "pages/cloudDownloadFile/cloudDownloadFile",
+          "query": "",
           "scene": null
         }
       ]

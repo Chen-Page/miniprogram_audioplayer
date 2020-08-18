@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/player/player"
+    "pages/index/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -10,6 +9,27 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "subPackages": [
+    {
+      "name": "player",
+      "root": "subPackages/player",
+      "pages": [
+        "pages/player/player"
+      ]
+    },
+    {
+      "name": "file",
+      "root": "subPackages/file",
+      "pages": [
+        "pages/cloudDownloadFile/cloudDownloadFile"
+      ]
+    },
+    {
+      "name": "user",
+      "root": "subPackages/user",
+      "pages": []
+    }
+  ],
   "requiredBackgroundModes": [
     "audio"
   ],
